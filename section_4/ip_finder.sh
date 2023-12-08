@@ -15,9 +15,9 @@ main() {
     check_input_flag "$INPUT_FLAG"
     check_output_flag "$OUTPUT_FLAG"
 
-    if [ "$INPUT_FLAG_IS_CORRECT" == false ] || [ "$OUTPUT_FLAG_IS_CORRECT" == false ]; then
-        cat readme.txt
-        echo -e "\n"
+    if [ "$INPUT_FLAG_IS_CORRECT" == false ] || [ "$OUTPUT_FLAG_IS_CORRECT" == false ] || [ "$HELP_FLAG_IS_CORRECT" == true ]; then
+        less readme.txt
+        #echo -e "\n"
     else
         find_and_export_ip_addr "$IP_ADDR_EXPRESSION" "$INPUT_FILEPATH" "$OUTPUT_FILEPATH"
     fi
@@ -25,6 +25,14 @@ main() {
 
 find_and_export_ip_addr(){
     grep -o --text "$1" "$2" | sort | uniq > $3
+}
+
+check_help_flag(){
+    if [ "$1" == "--help" ] || [ "$1" == "-h" ]; then
+        HELP_FLAG_IS_CORRECT=true
+    else
+        HELP_FLAG_IS_CORRECT=false
+    fi    
 }
 
 check_input_flag(){
