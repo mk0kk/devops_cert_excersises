@@ -6,6 +6,11 @@
 
       ip-finder
 
+ EXERCISE
+
+      6. Create a local BASH script to find all the IP addresses from a log file and save
+      them to another file.  
+
  SYNOPSIS
 
       ./ip-finder.sh [-i|--input-file] [INPUT FILEPATH] [-o|--output-file] [OUTPUT FILEPATH]
@@ -37,5 +42,5 @@
             ./ip-finder.sh -i /path/to/your/input_file.txt -o /path/to/your/output_file.txt
 
  AUTHOR
-      ip-finder was written by mk0kk.
+      ip-finder was written by Michael Kokkos.
       Follow me on Github: https://github.com/mk0kk 
