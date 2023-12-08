@@ -21,7 +21,7 @@ main() {
     check_help_flag "$INPUT_FLAG" 
 
     if [ "$HELP_FLAG_RAISED" == true ]; then
-        less readme.txt
+        less README.txt
     fi
 
     if [ "$INPUT_FLAG_RAISED" == false ] || [ "$OUTPUT_FLAG_RAISED" == false ]; then
