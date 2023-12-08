@@ -20,6 +20,7 @@
       Find all unique IP addresses from an input file and save the results to an output file.
       The options "-i" and "-o", along with their respective long options are mandatory.
       Mandatory arguments to short options are mandatory for long options too.
+      The file Linux_2k.log can be used as a dummy input file to test the script.
 
  OPTIONS
 
@@ -42,5 +43,5 @@
             ./ip-finder.sh -i /path/to/your/input_file.txt -o /path/to/your/output_file.txt
 
  AUTHOR
-      ip-finder was written by Michael Kokkos.
-      Follow me on Github: https://github.com/mk0kk 
+      Written by Michael Kokkos. Follow me on Github: https://github.com/mk0kk
+      The file Linux_2k.log was taken from loghub. https://github.com/logpai/loghub 
