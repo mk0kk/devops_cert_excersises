@@ -16,7 +16,6 @@ RED='\033[0;31m'
 NC='\033[0m'
 
 main() {
-
     check_flags
 
     if [ "$HELP_FLAG_RAISED" == true ]; then
