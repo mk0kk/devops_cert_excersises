@@ -27,6 +27,9 @@
             OUTPUT_FILE.
             OUTPUT_FILE can be referenced by its full or by its relative path.
 
+      -h, --help
+            Display the current manual page
+
  EXAMPLES
       The example below shows the "input_file.txt" been read, outputting the unique IP 
       addresses to the file "output_file.txt".
