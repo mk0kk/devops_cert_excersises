@@ -16,9 +16,8 @@ RED='\033[0;31m'
 NC='\033[0m'
 
 main() {
-    check_input_flag "$INPUT_FLAG"
-    check_output_flag "$OUTPUT_FLAG"
-    check_help_flag "$INPUT_FLAG" 
+
+    check_flags
 
     if [ "$HELP_FLAG_RAISED" == true ]; then
         less README.txt
@@ -29,6 +28,12 @@ main() {
     else
         find_and_export_ip_addr "$IP_ADDR_EXPRESSION" "$INPUT_FILEPATH" "$OUTPUT_FILEPATH"
     fi
+}
+
+check_flags(){
+    check_input_flag "$INPUT_FLAG"
+    check_output_flag "$OUTPUT_FLAG"
+    check_help_flag "$INPUT_FLAG" 
 }
 
 find_and_export_ip_addr(){
