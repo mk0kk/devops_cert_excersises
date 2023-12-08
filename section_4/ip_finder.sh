@@ -18,11 +18,14 @@ NC='\033[0m'
 main() {
     check_input_flag "$INPUT_FLAG"
     check_output_flag "$OUTPUT_FLAG"
+    check_help_flag "$INPUT_FLAG" 
+
+    if [ "$HELP_FLAG_RAISED" == true ]; then
+        less readme.txt
+    fi
 
     if [ "$INPUT_FLAG_RAISED" == false ] || [ "$OUTPUT_FLAG_RAISED" == false ]; then
-        echo -e "${RED}ERROR: Input or output options are missing/wrong ${NC}.\nRefer to documentation by providing the "-h" or "--help" option:\n\nuser@computer:~$ ./ip-finder.sh --help\n"
-    elif [ "$HELP_FLAG_RAISED" == true ]; then
-        less readme.txt
+        echo -e "${RED}ERROR: Input or output options are missing/wrong.${NC}\nRefer to documentation by providing the "-h" or "--help" option:\n\nuser@computer:~$ ./ip-finder.sh --help\n"
     else
         find_and_export_ip_addr "$IP_ADDR_EXPRESSION" "$INPUT_FILEPATH" "$OUTPUT_FILEPATH"
     fi
